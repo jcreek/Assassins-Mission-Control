@@ -9,11 +9,24 @@
 <body>    
 	<div id="main"> 
 		
-	    <form method="post" action="startgame.php" name="startgame" id="startgame">  
+	    <form method="post" action="admin-tools/create-users-table.php" name="create-users-table" id="create-users-table">  
 	    <fieldset> 
-	        <input type="submit" name="startgame" id="startgame" value="StartGame" />  
+	        <input type="submit" name="create-users-table" id="create-users-table" value="Create Users Table" />  
 	    </fieldset>  
 	    </form>  
+
+	    <form method="post" action="admin-tools/startgame.php" name="startgame" id="startgame">  
+	    <fieldset> 
+	        <input type="submit" name="startgame" id="startgame" value="Start Game" />  
+	    </fieldset>  
+	    </form>  
+
+	    <form method="post" action="admin-tools/close-registration.php" name="close-registration" id="close-registration">  
+	    <fieldset> 
+	        <input type="submit" name="close-registration" id="close-registration" value="Close Registration" />  
+	    </fieldset>  
+	    </form>  
+	    
 		
 		
 		
