@@ -1,0 +1,137 @@
+CREATE TABLE `users` (  
+`UserID` INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,  
+`AssassinID` INT(25) NOT NULL ,
+`TargetID` INT(25) NOT NULL ,
+`Username` VARCHAR(65) NOT NULL ,  
+`Password` VARCHAR(32) NOT NULL ,  
+`FullName` VARCHAR(255) NOT NULL ,
+`YearGroup` VARCHAR(65) NOT NULL , 
+`Subject` VARCHAR(65) NOT NULL , 
+`Societies` text NOT NULL , 
+`RegularHaunts` text NOT NULL , 
+`Ninjaness` int NOT NULL , 
+`Address` VARCHAR(255) NOT NULL ,
+`Kills` int NOT NULL , 
+`Status` VARCHAR(65) NOT NULL  
+);  
+
+INSERT INTO users
+(AssassinID, TargetID)
+VALUES
+($assassinID, $targetID);
+
+
+FOR SELECTING TARGETS:
+http://stackoverflow.com/questions/5612656/generating-unique-random-numbers-within-a-range-php
+for each user give them their own userID-1 position in the random array. If it's their own userID then i'm screwed. Does this even work? Would it not just create small circles? It would wouldn't it? Damn. 
+Gemma suggests to randomise their userIDs and then allocate targets based on those numbers. This is an excellent idea and proves that Gemma is a genius. 
+
+function UniqueRandomNumbersWithinRange($min, $max, $quantity) {
+    $numbers = range($min, $max);
+    shuffle($numbers);
+    return array_slice($numbers, 0, $quantity);
+}
+
+Then for each position in the array apply the shuffled number at that position to the user at that position in the table as a column 'AssassinNumber'. 
+
+Then when the game begins just allocate everyone the user with the assassin number after theirs. 
+
+When a user successfully kills a player mark that play as dead, void their target column and increment the number in the killer's target column. 
+
+
+Two new columns:
+	- AssassinID
+	- TargetID
+
+When sign-up is closed simply rename the register.php page and replace it with one saying that sign-up has closed and giving details of the society's fb page. 
+
+
+Code to count SQL rows:
+
+<?php
+$con = mysql_connect("server.com","user","pswd");
+if (!$con) {
+  die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db("db", $con);
+
+$result = mysql_query("select count(1) FROM table");
+$row = mysql_fetch_array($result);
+
+$total = $row[0];
+echo "Total rows: " . $total;
+
+mysql_close($con);
+?>
+
+TODO:	
+	- Set the index page to display the target information 
+	- Set the index page to display the total number of players
+	- Set the index page to display the total number of deaths
+	- Implement the kill submission system
+		- Give the assassin the targetID field of the deceased
+		- Remove the targetID field from the deceased
+		- Set the Status field of the deceased to 'Dead'
+		- Increment the Kill field of the assassin
+		- Increment the total number of deaths
+	- If a user is dead hide the 'Target' and 'Submit Kill' areas
+	- Add address to register page
+	- Enable Twitter feed
+	- Email us the kill details
+	- Email the assassin 
+	- Email the deceased
+	- Add photo to register page
+	
+	- Link twitter to facebook (NEEDS TO BE DONE ON FB?!)
+	- Notify when there are only three left, two left and when there is a winner!
+	- List the number of kills held by the top 5 killers
+	- List the number of people with zero kills
+	- Automatically release addresses of current targets to all still alive (by email)
+	
+	TELL PEOPLE THEY MUST CONFIRM THE IDENTITY OF THE PERSON THEY KILLED BEFORE SUBMITTING THE KILL OTHERWISE THEY WILL BE KICKED. 
+
+
+
+
+
+
+
+Things end user must be able to do before registering:
+•	Input information about themselves
+o	Name
+o	Year group
+o	Subject studied
+o	Societies
+o	Regular haunts
+o	0-10 scale of ninjaness
+•	Upload their photograph
+•	Sign up using their university email address 
+o	N.B. This will be their username
+Things end user must be able to do once registered:
+•	View information on current target
+o	Name
+o	Year group
+o	Subject studied
+o	Photograph
+o	Societies
+o	Regular haunts
+•	Submit details of a successful kill
+o	Click a button
+o	Confirm further by ticking a box or similar so no accidental submission of kill
+•	View number of total own kills
+•	View total number of assassins killed
+•	View total number of assassins left alive
+Things admin must be able to do:
+•	Manually kill an assassin
+•	Change the details of an assassin
+o	Including the photograph
+•	Add an assassin including all their details and photograph
+o	N.B. Could use the same system new assassins use to register
+•	View the identities and numbers of all assassins left alive and their targets
+Things the system must be able to do:
+•	Register a kill made by an assassin
+•	Send a confirmation email to the person killed to check they have been killed (and the manner by which they have been killed?) 
+
+
+http://net.tutsplus.com/tutorials/php/user-membership-with-php/
