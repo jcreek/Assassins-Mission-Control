@@ -15,18 +15,17 @@
 	    </fieldset>  
 	    </form>  
 
-	    <form method="post" action="admin-tools/startgame.php" name="startgame" id="startgame">  
-	    <fieldset> 
-	        <input type="submit" name="startgame" id="startgame" value="Start Game" />  
-	    </fieldset>  
-	    </form>  
-
 	    <form method="post" action="admin-tools/close-registration.php" name="close-registration" id="close-registration">  
 	    <fieldset> 
 	        <input type="submit" name="close-registration" id="close-registration" value="Close Registration" />  
 	    </fieldset>  
 	    </form>  
 	    
+	    <form method="post" action="admin-tools/startgame.php" name="startgame" id="startgame">  
+	    <fieldset> 
+	        <input type="submit" name="startgame" id="startgame" value="Start Game" />  
+	    </fieldset>  
+	    </form>  
 		
 		
 		
