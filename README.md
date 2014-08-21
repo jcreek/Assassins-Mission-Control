@@ -20,18 +20,14 @@ The web app for running a semi-automated game of Assassins.
 Install Instructions
 -------------------------------------
 
-1) Mission Control requires PHP and MySQL to run. Make sure you've got those installed on your web server. 
-
-2) In base.php you need to set your own database details. 
-
-3) Using the admin tools in admin.php, create the users table. 
-
-4) Your users can now begin to register using register.php - I'd recommend sending out a direct link using a URL shortener, although on the main page there is a link to registering just above the login box. 
+1. Mission Control requires PHP and MySQL to run. Make sure you've got those installed on your web server. 
+2. In base.php you need to set your own database details. 
+3. Using the admin tools in admin.php, create the users table. 
+4. Your users can now begin to register using register.php - I'd recommend sending out a direct link using a URL shortener, although on the main page there is a link to registering just above the login box. 
 
 Once all your users have registered
 -------------------------------------
 
-5) At this point you do not want anyone else to register so, as I haven't thought of a way to prevent adding any more data to an SQL table, you're going to duplicate the users table to a table called usersfinal which won't get edited by the registration form, thereby preventing anyone else from signing up. To do this head over to the admin tools in admin.php and close the registration. 
-
-6) Once you are ready to begin the game you need to go to admin.php and assign all players their targets by starting the game. 
+5. At this point you do not want anyone else to register so, as I haven't thought of a way to prevent adding any more data to an SQL table, you're going to duplicate the users table to a table called usersfinal which won't get edited by the registration form, thereby preventing anyone else from signing up. To do this head over to the admin tools in admin.php and close the registration. 
+6. Once you are ready to begin the game you need to go to admin.php and assign all players their targets by starting the game. 
 

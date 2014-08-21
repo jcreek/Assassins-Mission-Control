@@ -7,29 +7,20 @@
 	<link rel="stylesheet" href="style.css" type="text/css" />  
 </head>    
 <body>    
-	<div id="main"> 
-		
-	    <form method="post" action="admin-tools/create-users-table.php" name="create-users-table" id="create-users-table">  
-	    <fieldset> 
-	        <input type="submit" name="create-users-table" id="create-users-table" value="Create Users Table" />  
-	    </fieldset>  
-	    </form>  
+	<div id="main" style='width: 90%;'> 
+	<h1 style='text-align: center; padding-bottom: 15px;'>Mission Control Admin Tools</h1>
+		<div style='float:left; border-style: dotted; padding: 2%; width: 60%;'>
+	    <p><a href="admin-tools/create-users-table.php">Create users table</a></p>
 
-	    <form method="post" action="admin-tools/close-registration.php" name="close-registration" id="close-registration">  
-	    <fieldset> 
-	        <input type="submit" name="close-registration" id="close-registration" value="Close Registration" />  
-	    </fieldset>  
-	    </form>  
-	    
-	    <form method="post" action="admin-tools/startgame.php" name="startgame" id="startgame">  
-	    <fieldset> 
-	        <input type="submit" name="startgame" id="startgame" value="Start Game" />  
-	    </fieldset>  
-	    </form>  
-		
-		
-		
-		
+	    <p><a href="admin-tools/close-registration.php">Close registration</a></p>
+
+	    <p><a href="admin-tools/startgame.php">Start the game</a></p>
+		</div>
+	
+		<div style='float:right; border-style: dotted; padding: 2%; width: 20%;'>
+		<p><a href="admin-tools/adminer-sql.php">Log in to the database and modify the table directly</a>
+		<br>N.B. You will need to know the database server, user, password and database name. The table to modify is 'usersfinal' once the game has started.</p>
+		</div>
 	</div>  
 </body>  
 </html> 
