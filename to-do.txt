@@ -2,3 +2,4 @@
  - Add a text log admin file recording who has killed who along with timestamps
  - Add an admin tool to kill a player and give their assassin a new target without incrementing their kill number
  - Add an admin tool to correct an erroneous kill
+ - (Potential) Add a new column to the table for the name of a player's killer
