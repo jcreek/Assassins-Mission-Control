@@ -1,3 +1,7 @@
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+
 <?php  //this code creates the database connection for all pages that need it
 session_start();  
   

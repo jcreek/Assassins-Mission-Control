@@ -82,6 +82,10 @@ function GetNumberOfRows() {
 						<li>Ninjaness Score: <b><?=$_SESSION['Ninjaness']?>/10</b></li>
 						<li>You have made <b><?=$_SESSION['Kills']?> kills</b></li>
 					</ul> 
+					<?php  
+		if(file_exists("admin-tools/game-begun"))  
+		{  
+			?>  
 					<p>
 						<h1>Your Target</h1>
 						<ul>
@@ -120,6 +124,9 @@ function GetNumberOfRows() {
 				            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submitkill" id="submitkill" value="Submit Kill" /></p>
 				          </div>
 				        </form>
+				        <?php  
+		}
+			?>  
 						<?php  
 					}  
 					else {

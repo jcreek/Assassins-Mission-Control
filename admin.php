@@ -20,6 +20,8 @@
 		<div style='float:right; border-style: dotted; padding: 2%; width: 20%;'>
 		<p><a href="admin-tools/adminer-sql.php">Log in to the database and modify the table directly</a>
 		<br>N.B. You will need to know the database server, user, password and database name. The table to modify is 'usersfinal' once the game has started.</p>
+		<p><a href="admin-tools/reset-all.php">Reset everything ready for the next game</a>
+		<br>If you do this you will erase the current game.</p>
 		</div>
 	</div>  
 </body>  

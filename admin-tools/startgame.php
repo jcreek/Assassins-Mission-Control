@@ -1,5 +1,8 @@
 <?php include "../base.php"; 
 
+//rename the game-not-started file to game-begun
+rename("game-not-started","game-begun");
+
 //random number generator function
 function UniqueRandomNumbersWithinRange($min, $max, $quantity) {
     $numbers = range($min, $max);
