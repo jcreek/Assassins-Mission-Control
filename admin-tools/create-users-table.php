@@ -32,3 +32,4 @@ else
 
 
 ?>
+<?php include "return-to-admin-page.php"; ?>

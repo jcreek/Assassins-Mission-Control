@@ -62,6 +62,7 @@ for ($counter = 1; $counter <= $numberofrows; $counter += 1) { //*THIS WORKS
 	}
 			
 ?>
+<?php include "return-to-admin-page.php"; ?>
 
 
 <!--meta content="3;index.php" http-equiv="refresh"-->

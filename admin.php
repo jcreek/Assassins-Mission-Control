@@ -15,6 +15,9 @@
 	    <p><a href="admin-tools/close-registration.php">Close registration</a></p>
 
 	    <p><a href="admin-tools/startgame.php">Start the game</a></p>
+
+	    <p><a href="admin-tools/release-addresses.php">Release addresses</a></p>
+
 		</div>
 	
 		<div style='float:right; border-style: dotted; padding: 2%; width: 20%;'>

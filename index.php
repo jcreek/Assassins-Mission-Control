@@ -106,13 +106,21 @@ function GetNumberOfRows() {
 									echo "<li><img src='"."upload/".$_SESSION['Usernamet'].'.'.'png'."' class='targetphoto'></li>";
 								} 
 							?>
+							<?php  
+		if(file_exists("admin-tools/addresses-released"))  
+		{  
+			?>  
+							<li><h2>They live at:  <b><?=$_SESSION['Addresst']?></b></h2></li>
+							<?php 
+						}
+						?>
 							<li>Full name: <b><?=$_SESSION['FullNamet']?></b></li>
 							<li>Year group: <b><?=$_SESSION['YearGroupt']?></b></li>
 							<li>Email Address: <b><?=$_SESSION['Usernamet']?>@exeter.ac.uk</b></li>
 							<li>Subject Studied: <b><?=$_SESSION['Subjectt']?></b></li>
 							<li>Societies: <b><?=$_SESSION['Societiest']?></b></li>
 							<li>Regular Haunts:  <b><?=$_SESSION['RegularHauntst']?></b></li>
-							<li>They live at:  <b><?=$_SESSION['Addresst']?></b></li>
+
 							<li>Ninjaness Score <b><?=$_SESSION['Ninjanesst']?>/10</b></li>
 							<li>They have made <b><?=$_SESSION['Killst']?> kills</b></li>
 						</ul> 

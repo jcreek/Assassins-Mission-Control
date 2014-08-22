@@ -9,3 +9,4 @@
 
 mysql_query("CREATE TABLE usersfinal SELECT * FROM users");
 ?>
+<?php include "return-to-admin-page.php"; ?>
