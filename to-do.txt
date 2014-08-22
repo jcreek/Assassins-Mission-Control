@@ -1,0 +1,4 @@
+ - Add function for hit list where after a given length of time anyone who hasn't already made a kill can be killed by anyone
+ - Add a text log admin file recording who has killed who along with timestamps
+ - Add an admin tool to kill a player and give their assassin a new target without incrementing their kill number
+ - Add an admin tool to correct an erroneous kill
