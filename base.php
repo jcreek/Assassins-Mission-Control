@@ -3,7 +3,7 @@
 </head>
 
 <?php  //this code creates the database connection for all pages that need it
-echo '<p>Loaded base</p>';
+//echo '<p>Loaded base</p>'; //uncomment this line to display text at the top of all pages to show the base.php file has been loaded
 session_start();  
   
 $dbhost = "localhost"; // this will ususally be 'localhost', but can sometimes differ  
