@@ -11,7 +11,7 @@ $dbname = "assassins"; // the name of the database that you are going to use for
 $dbuser = "root"; // the username that you created, or were given, to access your database  
 $dbpass = "root"; // the password that you created, or were given, to access your database  
   
-mysql_connect($dbhost, $dbuser, $dbpass) or die("MySQL Error: " . mysql_error());  
-mysql_select_db($dbname) or die("MySQL Error: " . mysql_error());  
+mysqli_connect($dbhost, $dbuser, $dbpass) or die("MySQL Error: " . mysqli_error());  
+mysqli_select_db($dbname) or die("MySQL Error: " . mysqli_error());  
 //echo "success in database connection."; //Uncomment this line if you want to check if a page is loading this database connection code
 ?>  
