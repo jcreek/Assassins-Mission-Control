@@ -59,7 +59,7 @@ foreach($files as $file){ // iterate files
 }
 
 
-} 
+
 
 Echo "<br>"
 Echo "End of the reset page reached. Unless there are error messages above everything is reset!"

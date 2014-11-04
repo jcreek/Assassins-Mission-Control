@@ -1,5 +1,16 @@
- - Add function for hit list where after a given length of time anyone who hasn't already made a kill can be killed by anyone
  - Add a text log admin file recording who has killed who along with timestamps
  - Add an admin tool to kill a player and give their assassin a new target without incrementing their kill number
  - Add an admin tool to correct an erroneous kill
+
+
+>> THINGS REQUIRING FIDDLING WITH THE TABLE STRUCTURE
+-------------------------------------------------------
+
+ - Add function for hit list where after a given length of time anyone who hasn't already made a kill can be killed by anyone
+	+ This I want to be performed by Admins so there needs to be the following: 
+		- A dropdown box containing the names of everyone who hadn't made a kill in the given length of time which will be used by players to report that they have killed one of those poor assassins
+			+ This will probably require an extra column in the database tables
+		- An email will be sent to the target to inform them that they have allegedly been killed and they need to act fast to inform admins if this was not the case. 
+		- An email will be sent to the admin to inform them that the target has allegedly been killed. 
+		- The admin will need to be able to choose the names of the killer and target from two dropdown boxes of everyone playing (Alphabetised would probably be best?) and then click a buttom to submit that kill
  - (Potential) Add a new column to the table for the name of a player's killer

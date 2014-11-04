@@ -1,5 +1,5 @@
 <?php
 echo "<h1>Admin Task Completed</h1>";  
-echo "<p>Click below to return to the admin tools page.</p>";  
-echo '<a href="../admin.php">Return to admin tools page</a>'; 
+echo "<p>Click below to return to the Command Centre.</p>";  
+echo '<a href="../command-centre.php">Return to Command Centre</a>'; 
 ?>

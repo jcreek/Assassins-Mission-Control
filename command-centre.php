@@ -3,12 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">    
 <head>    
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
-	<title>Assassins Mission Control</title>  
+	<title>Assassins :: COMMAND CENTRE</title>  
 	<link rel="stylesheet" href="style.css" type="text/css" />  
 </head>    
 <body>    
 	<div id="main" style='width: 90%;'> 
-	<h1 style='text-align: center; padding-bottom: 15px;'>Mission Control Admin Tools</h1>
+	<h1 style='text-align: center; padding-bottom: 15px;'>Command Centre Admin Tools</h1>
 		<div style='float:left; border-style: dotted; padding: 2%; width: 60%;'>
 	    <p><a href="admin-tools/create-users-table.php">Create users table</a></p>
 
