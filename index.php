@@ -2,8 +2,8 @@
 <?php
 //get the number of rows in the table *THIS WORKS
 function GetNumberOfRows() {
-	$result = mysqli_query( "select count(UserID) as num_rows from users" );
-	$row = mysqli_fetch_object( $result );
+	$result = mysql_query( "select count(UserID) as num_rows from users" );
+	$row = mysql_fetch_object( $result );
 	$total = $row->num_rows;
 	return $total;
 }
@@ -174,14 +174,14 @@ function GetNumberOfRows() {
 							$username = mysql_real_escape_string($_POST['username']);  
 							$password = md5(mysql_real_escape_string($_POST['password']));  
       
-							$checklogin = mysqli_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");  
+							$checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");  
       		  	
 							//Get the number of players and send it to a session variable
 							$numberofplayers = GetNumberOfRows();
 							$_SESSION['NumberOfPlayers'] = $numberofplayers;
 				
 							//Get the number of players with 'Alive' as their 'Status' and send that to a session variable
-							$getplayersalive = mysqli_query("SELECT * FROM users WHERE Status = 'Alive'");  
+							$getplayersalive = mysql_query("SELECT * FROM users WHERE Status = 'Alive'");  
 							$numberofplayersalive = mysql_num_rows($getplayersalive);
 							$_SESSION['NumberOfPlayersAlive'] = $numberofplayersalive;
 	  
@@ -220,7 +220,7 @@ function GetNumberOfRows() {
 								//Now set the Target Information
 								//Query the database for the user with 'AssassinID'=$targetID and then 
 					
-								$targetinfo = mysqli_query("SELECT * FROM users WHERE AssassinID = '".$targetid."'");  
+								$targetinfo = mysql_query("SELECT * FROM users WHERE AssassinID = '".$targetid."'");  
       
 								if(mysql_num_rows($targetinfo) == 1)  
 								{  
