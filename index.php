@@ -44,7 +44,7 @@ function GetNumberOfRows() {
 				            <img class="paperclip" src="style/paperclip.png" alt="paperclip" />
 				            <div class="sidebar">
 				              <h3>The Rules</h3>
-				              <form method="post" action="assasins-rules-d1.pdf" id="rules">
+				              <form method="post" action="assassins-rules-d1.pdf" id="rules">
 				                <p style="padding: 0 0 0px 0;"></p>
 				                <p><input class="subscribe" name="subscribe" type="submit" value="View Rules" /></p>
 				              </form>
