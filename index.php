@@ -41,6 +41,14 @@ function GetNumberOfRows() {
 				                <p><input class="subscribe" name="subscribe" type="submit" value="Log Out" /></p>
 				              </form>
 				            </div>
+				            <img class="paperclip" src="style/paperclip.png" alt="paperclip" />
+				            <div class="sidebar">
+				              <h3>The Rules</h3>
+				              <form method="post" action="assasins-rules-d1.pdf" id="rules">
+				                <p style="padding: 0 0 0px 0;"></p>
+				                <p><input class="subscribe" name="subscribe" type="submit" value="View Rules" /></p>
+				              </form>
+				            </div>
 				          <img class="paperclip" src="style/paperclip.png" alt="paperclip" />
 				          <div class="sidebar">
 				          <!-- insert your sidebar items here -->
