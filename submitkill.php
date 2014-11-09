@@ -39,24 +39,24 @@ $_killedname = $_SESSION['FullNamet'];
 $_killedusername = $_SESSION['Usernamet'];
 
 	//Get the TargetID of the deceased
-//$deceasedtargetid = $_SESSION['TargetIDt'];  //mysql_query("SELECT TargetID FROM users WHERE AssassinID = '".$_SESSION['TargetID']."'");
+//$deceasedtargetid = $_SESSION['TargetIDt'];  //mysql_query("SELECT TargetID FROM usersfinal WHERE AssassinID = '".$_SESSION['TargetID']."'");
 //echo $_SESSION['TargetIDt'];
 //Using that TargetID reset the session variables of the killer's target
-mysql_query( "UPDATE users SET TargetID = '".$_SESSION['TargetIDt']."' WHERE AssassinID = '".$_SESSION['AssassinID']."'" ) ;
+mysql_query( "UPDATE usersfinal SET TargetID = '".$_SESSION['TargetIDt']."' WHERE AssassinID = '".$_SESSION['AssassinID']."'" ) ;
 
 //Wipe the TargetID of the deceased
-mysql_query( "UPDATE users SET TargetID = 0 WHERE AssassinID = '".$_SESSION['TargetID']."'" ) ;
+mysql_query( "UPDATE usersfinal SET TargetID = 0 WHERE AssassinID = '".$_SESSION['TargetID']."'" ) ;
 
 //Mark the deceased as 'Dead'
-mysql_query( "UPDATE users SET Status = 'Dead' WHERE AssassinID = '".$_SESSION['TargetID']."'" ) ;
+mysql_query( "UPDATE usersfinal SET Status = 'Dead' WHERE AssassinID = '".$_SESSION['TargetID']."'" ) ;
   
 //Increment the Killer's Kill field
 $newkills = $_SESSION['Kills'] + 1;
 $_SESSION['Kills'] = $newkills ;
-mysql_query( "UPDATE users SET Kills = '".$_SESSION['Kills']."' WHERE AssassinID = '".$_SESSION['AssassinID']."'" ) ;
+mysql_query( "UPDATE usersfinal SET Kills = '".$_SESSION['Kills']."' WHERE AssassinID = '".$_SESSION['AssassinID']."'" ) ;
 
 
-$targetinfo = mysql_query("SELECT * FROM users WHERE AssassinID = '".$_SESSION['TargetIDt']."'");  
+$targetinfo = mysql_query("SELECT * FROM usersfinal WHERE AssassinID = '".$_SESSION['TargetIDt']."'");  
 $_SESSION['TargetID'] = $_SESSION['TargetIDt'];
 
 
@@ -92,7 +92,7 @@ if(mysql_num_rows($targetinfo) == 1)
 	$_SESSION['Statust'] = $statust;  
 }
 //Get the number of players with 'Alive' as their 'Status' and send that to a session variable
-$getplayersalive = mysql_query("SELECT * FROM users WHERE Status = 'Alive'");  
+$getplayersalive = mysql_query("SELECT * FROM usersfinal WHERE Status = 'Alive'");  
 $numberofplayersalive = mysql_num_rows($getplayersalive);
 $_SESSION['NumberOfPlayersAlive'] = $numberofplayersalive;
 ?>
@@ -118,11 +118,11 @@ cb.__call(
 <!--Send kill details via email-->
 <?php
 //Mail us to confirm the kill
-smtpmailer('hideandseekexeter@gmail.com', 'hideandseekexeter@gmail.com', 'Hide and Seek Exeter', $_killedname.' has been killed', $_SESSION['KillDetails']);
+smtpmailer('exeterunihideandseek@gmail.com', 'exeterunihideandseek@gmail.com', 'Hide and Seek Exeter', $_killedname.' ('.$_killedusername.'@exeter.ac.uk'')) has been killed by '.$_SESSION['Username'].'@exeter.ac.uk', $_SESSION['KillDetails']);
 //Mail the killer 
-smtpmailer($_SESSION['Username'].'@exeter.ac.uk', 'hideandseekexeter@gmail.com', 'Hide and Seek Exeter', 'You have killed '.$_killedname, $_SESSION['KillDetails']);
+smtpmailer($_SESSION['Username'].'@exeter.ac.uk', 'exeterunihideandseek@gmail.com', 'Hide and Seek Exeter', 'You have killed '.$_killedname, $_SESSION['KillDetails']);
 //Mail the deceased
-smtpmailer($_killedusername.'@exeter.ac.uk', 'hideandseekexeter@gmail.com', 'Hide and Seek Exeter', 'You, '.$_killedname.' have been killed', $_SESSION['KillDetails']);
+smtpmailer($_killedusername.'@exeter.ac.uk', 'exeterunihideandseek@gmail.com', 'Hide and Seek Exeter', 'You, '.$_killedname.' have been killed', $_SESSION['KillDetails']);
 	
 ?>
 <!DOCTYPE html> 
